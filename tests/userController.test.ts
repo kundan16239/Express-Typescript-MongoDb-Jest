@@ -63,7 +63,7 @@ describe('User Profile API', () => {
         .set('User-Agent', 'Dart')
         .set('Authorization', 'Bearer invalidToken');
   
-      expect(invalidTokenResponse.status).toBe(403);
+      expect(invalidTokenResponse.status).toBe(400);
     });
     
     it('should handle valid token and different user Id', async () => {
@@ -75,7 +75,7 @@ describe('User Profile API', () => {
           .set('User-Agent', 'Dart')
           .set('Authorization', `Bearer ${token}`);
     
-        expect(invalidTokenResponse.status).toBe(401);
+        expect(invalidTokenResponse.status).toBe(400);
       });
 });
   

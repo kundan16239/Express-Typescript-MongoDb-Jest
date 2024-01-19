@@ -2,8 +2,6 @@ import { Request, Response } from 'express';
 import UserModel from '../models/user';
 import {generateToken, comparePassword, hashPassword} from '../helpers/authHelper'
 
-const saltRounds = 10;
-
 export const registerUser = async (req: Request, res: Response) => {
   try {
     const { name, email, password } = req.body;

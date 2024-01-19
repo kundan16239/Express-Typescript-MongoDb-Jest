@@ -64,26 +64,22 @@ describe('User Registration API', () => {
     expect(response.body).toEqual({ error: 'User already exists' });
   });
 
-  // body validation
 
-  // it('should handle registration with invalid input', async () => {
-  //   const invalidUserData = {
-  //     // Missing 'password' field
-  //     name: 'John Doe',
-  //     email: 'john.doe@example.com',
-  //   };
+  it('should handle registration with invalid input', async () => {
+    const invalidUserData = {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+    };
 
-  //   const response = await request(app)
-  //     .post('/api/auth/register')
-  //     .send(invalidUserData)
-  //     .set('User-Agent', 'Dart')
-  //     .set('Content-Type', 'application/json');
+    const response = await request(app)
+      .post('/api/auth/register')
+      .send(invalidUserData)
+      .set('User-Agent', 'Dart')
+      .set('Content-Type', 'application/json');
 
-  //   expect(response.status).toBe(400);
-  //   expect(response.body).toEqual({ error: 'Invalid input data' });
-  // });
+    expect(response.status).toBe(400);
+  });
 
-  // Add more test cases as needed
 });
 
 describe('User Login API', () => {
