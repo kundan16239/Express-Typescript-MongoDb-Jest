@@ -1,5 +1,5 @@
 {
-    "mongoDbUrl": "mongodb+srv://kundan16239:kundan16239@cluster0.89z140s.mongodb.net/interview",
+    "mongoDbUrl": "",
     "port": 3000,
     "jwtSecret": "secretKey",
     "allowedOrigins": ["http://localhost:3000", "https://api.example.com"]
